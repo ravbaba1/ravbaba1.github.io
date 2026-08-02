@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rafiu Adisa | Cybersecurity & Backend Portfolio</title>
+  <style>
+    :root {
+      --bg: #07111f;
+      --card: #0f1b2d;
+      --text: #e6eefb;
+      --muted: #9fb0c8;
+      --accent: #4fd1c5;
+      --accent-2: #6a5cff;
+      --border: #21314a;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, var(--bg), #0b1725 60%, #111b2d);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0 40px;
+    }
+
+    .brand { font-size: 1.1rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+    nav a { margin-left: 18px; color: var(--muted); }
+    nav a:hover { color: var(--text); }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: center;
+      padding: 30px 0 50px;
+    }
+
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .profile-photo {
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      padding: 4px;
+      background: #fff;
+    }
+
+    .profile-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .profile-subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hero-card, .card {
+      background: rgba(15, 27, 45, 0.92);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(79, 209, 197, 0.12);
+      color: var(--accent);
+      font-size: 0.85rem;
+      margin-bottom: 12px;
+    }
+
+    h1, h2, h3 { margin-top: 0; }
+    h1 { font-size: 2.5rem; margin-bottom: 12px; }
+    .lead { color: var(--muted); font-size: 1.05rem; }
+
+    .pill-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(106, 92, 255, 0.15);
+      color: #d7d3ff;
+      border: 1px solid rgba(106, 92, 255, 0.25);
+      font-size: 0.92rem;
+    }
+
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 20px; }
+    .stat { padding: 14px; border-radius: 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); }
+    .stat strong { display: block; font-size: 1.1rem; }
+
+    section { margin: 24px 0 34px; }
+    .section-title { margin-bottom: 12px; font-size: 1.3rem; }
+    .grid { display: grid; gap: 16px; }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+    ul { padding-left: 18px; color: var(--muted); }
+    li { margin-bottom: 8px; }
+
+    .project-item { margin-bottom: 14px; }
+    .project-item strong { color: var(--text); }
+
+    footer {
+      padding: 24px 0 40px;
+      color: var(--muted);
+    }
+
+    .footer-card {
+      background: rgba(15, 27, 45, 0.92);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .contact-list p { margin: 6px 0; }
+
+    .message-box {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .message-box input, .message-box textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font: inherit;
+    }
+
+    .message-box button {
+      padding: 10px 14px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .status-message {
+      min-height: 20px;
+      font-size: 0.95rem;
+      color: var(--accent);
+      margin: 0;
+    }
+
+    @media (max-width: 860px) {
+      .hero, .grid-2 { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: 1fr; }
+      header { flex-direction: column; align-items: flex-start; gap: 10px; }
+      nav a { margin-left: 0; margin-right: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="profile-header">
+        <img class="profile-photo" src="./images/profile.JPEG" alt="Rafiu Adisa profile" />
+        <div>
+          <div class="profile-title">Rafiu Adisa</div>
+          <div class="profile-subtitle">Cybersecurity Engineer & Backend Developer</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certs">Certifications</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-card">
+        <div class="eyebrow">Cybersecurity engineer • Backend developer</div>
+        <h1>Building secure systems with defense, automation, and practical hands-on experience.</h1>
+        <p class="lead">I’m Rafiu Adisa, a cybersecurity engineer and backend developer focused on defensive and offensive security, secure system design, and practical hands-on labs.</p>
+        <p><strong>Email:</strong> ravbaba@yahoo.com</p>
+        <div class="pill-row">
+          <span class="pill">Defensive Security</span>
+          <span class="pill">Offensive Security</span>
+          <span class="pill">Linux & Windows</span>
+          <span class="pill">Backend Development</span>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>10+</strong><span>Hands-on lab projects</span></div>
+          <div class="stat"><strong>SIEM</strong><span>Wazuh-based SOC setup</span></div>
+          <div class="stat"><strong>PENTEST</strong><span>Penetration testing labs</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Core strengths</h3>
+        <ul>
+          <li>Security monitoring, analysis, and detection workflows</li>
+          <li>Network and vulnerability assessment using Nmap, Nessus, Wireshark</li>
+          <li>Web app testing and traffic inspection with Burp Suite</li>
+          <li>Backend development with practical database and API experience</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="about" class="card">
+      <h2 class="section-title">About me</h2>
+      <p>I am a cybersecurity engineer with a strong interest in protecting systems, understanding attacker behavior, and building secure backend solutions. My work blends practical security operations with development experience to create resilient systems.</p>
+    </section>
+
+    <section id="skills" class="grid grid-2">
+      <div class="card">
+        <h3>Security skills</h3>
+        <ul>
+          <li>Defensive security fundamentals and threat monitoring</li>
+          <li>Offensive security concepts and penetration testing methodology</li>
+          <li>Network analysis with Wireshark and scanning with Nmap</li>
+          <li>Vulnerability assessment using Nessus</li>
+          <li>Web interception and testing with Burp Suite</li>
+          <li>Firewall and SIEM basics, including Wazuh</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Tools & platforms</h3>
+        <ul>
+          <li>Linux and Windows environments</li>
+          <li>Virtual machines and isolated lab networks</li>
+          <li>Security operations lab design and testing</li>
+          <li>Backend development workflow and API building</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects" class="card">
+      <h2 class="section-title">Featured projects</h2>
+      <div class="project-item">
+        <strong>SOC lab using Wazuh</strong>
+        <p>Built a security operations center-style environment to monitor logs, detect suspicious activity, and understand alerting workflows.</p>
+      </div>
+      <div class="project-item">
+        <strong>Penetration testing with Metasploitable 2</strong>
+        <p>Conducted practical exercises to explore exploitation paths, understand common vulnerabilities, and improve defensive response.</p>
+      </div>
+      <div class="project-item">
+        <strong>Isolated network firewall defense lab</strong>
+        <p>Created a segmented network setup to evaluate firewall behavior and test how defensive controls reduce attack impact.</p>
+      </div>
+      <div class="project-item">
+        <strong>FTP vs SFTP virtual machine comparison</strong>
+        <p>Built virtual machines to compare protocol behavior, security differences, and practical data transfer considerations.</p>
+      </div>
+    </section>
+
+    <section id="certs" class="card">
+      <h2 class="section-title">Certifications</h2>
+      <ul>
+        <li>Cybersecurity completion certificate</li>
+        <li>Introduction to Cybersecurity – Cisco</li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-card">
+      <div class="contact-list">
+        <h3>Contact</h3>
+        <p>Email: ravbaba@yahoo.com</p>
+        <p>Location: Open for cybersecurity and backend opportunities</p>
+        <p>Availability: Available for collaboration and interviews</p>
+      </div>
+      <form id="contactForm" class="message-box">
+        <h3>Message me</h3>
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="email" placeholder="Your email" required />
+        <textarea name="message" rows="4" placeholder="Write your message here..." required></textarea>
+        <button type="submit">Send Message</button>
+        <p id="formStatus" class="status-message" aria-live="polite"></p>
+      </form>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+    const submitButton = form.querySelector('button[type="submit"]');
+
+    form.addEventListener('submit', async function (event) {
+      event.preventDefault();
+
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+
+      if (!name || !email || !message) {
+        status.textContent = 'Please fill in all fields before sending.';
+        return;
+      }
+
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending...';
+      status.textContent = 'Sending your message...';
+
+      const formData = new FormData(form);
+      formData.set('_subject', `Portfolio message from ${name}`);
+      formData.set('_captcha', 'false');
+      formData.set('_template', 'table');
+      formData.set('_next', window.location.href);
+
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/ravbaba@yahoo.com', {
+          method: 'POST',
+          body: formData
+        });
+
+        if (response.ok) {
+          status.textContent = 'Your message was sent successfully. Thank you!';
+          form.reset();
+        } else {
+          throw new Error('Unable to send message right now.');
+        }
+      } catch (error) {
+        status.textContent = 'Your message could not be sent. Please email me directly at ravbaba@yahoo.com.';
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Send Message';
+      }
+    });
+  </script>
+</body>
+</html>
